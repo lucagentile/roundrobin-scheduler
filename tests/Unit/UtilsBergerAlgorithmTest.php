@@ -4,7 +4,6 @@ use Gautile\RoundRobin\RoundRobinScheduler;
 
 class UtilsBergerAlgorithmTest extends PHPUnit_Framework_TestCase
 {
-
     private $utils;
 
     /**
@@ -17,6 +16,7 @@ class UtilsBergerAlgorithmTest extends PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider provideValidEvenRound
+     *
      * @param $input
      * @param $expected
      * @param $msg
@@ -29,6 +29,7 @@ class UtilsBergerAlgorithmTest extends PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider provideValidOddRound
+     *
      * @param $input
      * @param $expected
      * @param $msg
@@ -43,7 +44,7 @@ class UtilsBergerAlgorithmTest extends PHPUnit_Framework_TestCase
     {
         $input = ['Milan', 'Inter'];
         $output = $this->utils->BergerAlgorithm($input);
-        $this->assertSame($output, [['Milan','Inter']]);
+        $this->assertSame($output, [['Milan', 'Inter']]);
     }
 
     public function testInputZeroTeam()
@@ -65,19 +66,21 @@ class UtilsBergerAlgorithmTest extends PHPUnit_Framework_TestCase
                 ['Juventus', 'Milan', 'Roma', 'Napoli'],
                 [
                     [
-                        ['Napoli', 'Juventus'], ['Roma', 'Milan']
+                        ['Napoli', 'Juventus'], ['Roma', 'Milan'],
                     ],
                     [
-                        ['Juventus', 'Milan'], ['Roma', 'Napoli']
+                        ['Juventus', 'Milan'], ['Roma', 'Napoli'],
                     ],
                     [
-                        ['Roma', 'Juventus'], ['Milan', 'Napoli']
-                    ]
+                        ['Roma', 'Juventus'], ['Milan', 'Napoli'],
+                    ],
                 ],
-                "Provided valid even array doesn't match the expected completed round"
-            ],//end #1 dataset
+                "Provided valid even array doesn't match the expected completed round",
+            ], //end #1 dataset
         ];
-    }//provideValidEvenRound()
+    }
+
+    //provideValidEvenRound()
 
     public function provideValidOddRound()
     {
@@ -86,30 +89,32 @@ class UtilsBergerAlgorithmTest extends PHPUnit_Framework_TestCase
                 ['Juventus', 'Milan', 'Roma', 'Napoli', 'Inter'],
                 [
                     [
-                        ['REST', 'Juventus'], ['Inter', 'Milan'],  ['Napoli', 'Roma']
+                        ['REST', 'Juventus'], ['Inter', 'Milan'],  ['Napoli', 'Roma'],
                     ],
                     [
-                        ['Juventus', 'Milan'], ['Roma', 'REST'], ['Napoli', 'Inter']
+                        ['Juventus', 'Milan'], ['Roma', 'REST'], ['Napoli', 'Inter'],
                     ],
                     [
-                        ['Roma', 'Juventus'], ['Milan', 'Napoli'], ['REST', 'Inter']
+                        ['Roma', 'Juventus'], ['Milan', 'Napoli'], ['REST', 'Inter'],
                     ],
                     [
-                        ['Juventus', 'Napoli'], ['Inter', 'Roma'], ['REST', 'Milan']
+                        ['Juventus', 'Napoli'], ['Inter', 'Roma'], ['REST', 'Milan'],
                     ],
                     [
-                        ['Inter', 'Juventus'], ['Napoli', 'REST'], ['Roma', 'Milan']
-                    ]
+                        ['Inter', 'Juventus'], ['Napoli', 'REST'], ['Roma', 'Milan'],
+                    ],
                 ],
-                "Provided valid odd array doesn't match the expected completed round"
-            ],//end #1 datase
+                "Provided valid odd array doesn't match the expected completed round",
+            ], //end #1 datase
             [
                 ['Napoli'],
                 [
-                    ['Napoli', 'REST']
+                    ['Napoli', 'REST'],
                 ],
-                "If function get only one team, it should return an array with that team and REST"
-            ]
+                'If function get only one team, it should return an array with that team and REST',
+            ],
         ];
-    }//provideValidOddRound()
+    }
+
+    //provideValidOddRound()
 }//testClass

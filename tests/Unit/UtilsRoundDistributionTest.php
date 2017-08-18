@@ -4,7 +4,6 @@ use Gautile\RoundRobin\RoundRobinScheduler;
 
 class UtilsRoundDistributionTest extends PHPUnit_Framework_TestCase
 {
-
     /**
      * @var RoundRobinScheduler
      */
@@ -17,6 +16,7 @@ class UtilsRoundDistributionTest extends PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider provideValidArrayOfTeams
+     *
      * @param $input
      */
     public function testDistributeAmongRounds($input, $expected, $msg)
@@ -58,10 +58,12 @@ class UtilsRoundDistributionTest extends PHPUnit_Framework_TestCase
                 [
                     ['Genoa', 'Fiorentina', 'Napoli', 'Milan'],
                     ['Sampdoria', 'Lazio', 'Juventus'],
-                    ['Udinese', 'Inter', 'Roma']
+                    ['Udinese', 'Inter', 'Roma'],
                 ],
-                "Returned set of rounds from valid array of teams doesn't match the expected one"
-            ],//end #1 dataset
+                "Returned set of rounds from valid array of teams doesn't match the expected one",
+            ], //end #1 dataset
         ];
-    }//provideValidOddRound()
+    }
+
+    //provideValidOddRound()
 }
