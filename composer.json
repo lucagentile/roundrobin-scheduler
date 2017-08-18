@@ -1,0 +1,32 @@
+{
+    "name": "lucagentile/roundrobin-scheduler",
+    "description": "Utils for round-robin tournaments. Laravel ready.",
+    "keywords": ["library", "laravel", "round-robin", "tournaments", "berger", "teams", "scheduler"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Luca Gentile",
+            "email": "info@lucagentile.eu"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.7",
+        "laravel/framework": "^5.4",
+        "orchestra/testbench": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gautile\\RoundRobin\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gautile\\RoundRobin\\Tests\\": "tests/"
+        }
+    }
+}
