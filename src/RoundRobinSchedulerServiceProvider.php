@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 
 class RoundRobinSchedulerServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -21,7 +20,7 @@ class RoundRobinSchedulerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('roundrobin-scheduler', function ($app){
+        $this->app->singleton('roundrobin-scheduler', function ($app) {
             return new RoundRobinScheduler();
         });
     }
@@ -29,7 +28,7 @@ class RoundRobinSchedulerServiceProvider extends ServiceProvider
     public function provides()
     {
         return [
-            'roundrobin-scheduler'
+            'roundrobin-scheduler',
         ];
     }
 }

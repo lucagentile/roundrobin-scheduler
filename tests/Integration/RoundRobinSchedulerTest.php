@@ -6,7 +6,6 @@ use ReflectionClass;
 
 class RoundRobinSchedulerTest extends TestCase
 {
-
     /**
      * @var \Gautile\RoundRobin\RoundRobinSchedulerServiceProvider
      */
@@ -43,14 +42,17 @@ class RoundRobinSchedulerTest extends TestCase
     /**
      * @param $class
      * @param $name
+     *
      * @return \ReflectionMethod
      *
      * @link https://stackoverflow.com/questions/249664/best-practices-to-test-protected-methods-with-phpunit#answer-2798203
      */
-    protected static function getMethod($class, $name) {
+    protected static function getMethod($class, $name)
+    {
         $class = new ReflectionClass($class);
         $method = $class->getMethod($name);
         $method->setAccessible(true);
+
         return $method;
     }
 }
